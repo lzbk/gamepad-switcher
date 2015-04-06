@@ -18,17 +18,17 @@ y = KEY_F
 lt = BTN_RIGHT
 rt = BTN_LEFT
 
-rb = KEY_LEFTSHIFT
-lb = KEY_Q
+rb = KEY_UP
+lb = KEY_DOWN
 
 tl = KEY_LEFTSHIFT
 tr = KEY_R
 
 [ui-buttonmap]
-du = KEY_J
-dr = KEY_N
-dd = KEY_X
-dl = KEY_M
+du = KEY_UP
+dr = KEY_RIGHT
+dd = KEY_DOWN
+dl = KEY_LEFT
 
 # lt = KEY_VOLUMEDOWN
 # rt = KEY_VOLUMEUP
