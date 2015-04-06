@@ -8,4 +8,4 @@ if lsmod | grep -q "^$module "
 then sudo rmmod xpad
 fi
 
-sudo xboxdrv -c braid.xboxdrv -s
+sudo xboxdrv$pad -c braid.xboxdrv -s

@@ -8,4 +8,4 @@ if lsmod | grep -q "^$module "
 then sudo rmmod xpad
 fi
 
-sudo xboxdrv -c minecraft.xboxdrv -s
+sudo xboxdrv$pad -c minecraft.xboxdrv -s
