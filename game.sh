@@ -3,6 +3,21 @@
 # 2 parameters can be used : 1 → x for xbox controller, p for ps3
 #                            2 → name of the game as suggested in menu
 
+#configuration
+. ./config.sh
+cd $workingDirectory
+if [ -e "$killProcessesScript" ]
+then
+	echo "There seems to be (a) running instance(s) of the game controller, do you want to brutally kill the processes? (Y/n)\nI'm not sure what it does if you don't…"
+	read userinput
+	if [ "$userinput" = "Y" ]
+	then
+		sh $killProcessesScript
+		rm $killProcessesScript
+		sleep 1
+	fi
+fi
+
 if [ $# = 0 ]
 then
 	echo "(X)box or (P)S3 ?"
@@ -33,11 +48,12 @@ else
 	echo What game would you like to play?
 	echo 1\) vvvvvv
 	echo 2\) Braid
-	echo 3\) Limbo
-	echo 4\) Lone Survivor
-	echo 5\) Minecraft
-	echo 6\) Psychonauts
-	echo 7\) Amnesia
+	echo 3\) Eggnogg
+	echo 93\) Limbo
+	echo 94\) Lone Survivor
+	echo 95\) Minecraft
+	echo 96\) Psychonauts
+	echo 97\) Amnesia
 	echo "99) None, give me my gamepad mode back."
 	read userinput
 fi
@@ -55,31 +71,38 @@ then
 	echo
 	cd modules 
 	./braid.sh
-elif [ "$userinput" = 3 -o "$userinput" = "Limbo" -o "$userinput" = "limbo" ]
+elif [ "$userinput" = 3 -o "$userinput" = "Eggnogg" -o "$userinput" = "eggnogg" -o "$userinput" = "egg" -o "$userinput" = "E" -o "$userinput" = "e" ]
+then
+	echo "Your controllerS will now be configured for eggnogg."
+#Different types of controllers could be configured, but it's not my case so I won't do it ;)
+	echo
+	cd modules 
+	./eggnogg.sh
+elif [ "$userinput" = 93 -o "$userinput" = "Limbo" -o "$userinput" = "limbo" ]
 then
 	echo "Your controller will now be configured for Limbo."
 	echo
 	cd modules 
 	./limbo.sh
-elif [ "$userinput" = 4 -o "$userinput" = "Lone Survivor" -o "$userinput" = "lone survivor" ]
+elif [ "$userinput" = 94 -o "$userinput" = "Lone Survivor" -o "$userinput" = "lone survivor" ]
 then
 	echo "Your controller will now be configured for Lone Survivor"
 	echo
 	cd modules 
 	./lonesurvivor.sh
-elif [ "$userinput" = 5 -o "$userinput" = "Minecraft" -o "$userinput" = "minecraft" ]
+elif [ "$userinput" = 95 -o "$userinput" = "Minecraft" -o "$userinput" = "minecraft" ]
 then
 	echo "Your controller will now be configured for Minecraft."
 	echo
 	cd modules 
 	./minecraft.sh
-elif [ "$userinput" = 6 -o "$userinput" = "Psychonauts" -o "$userinput" = "psychonauts" ]
+elif [ "$userinput" = 96 -o "$userinput" = "Psychonauts" -o "$userinput" = "psychonauts" ]
 then
 	echo "Your controller will now be configured for Psychonauts."
 	echo
 	cd modules 
 	./psychonauts.sh
-elif [ "$userinput" = 7 -o "$userinput" = "Amnesia" -o "$userinput" = "amnesia" ]
+elif [ "$userinput" = 97 -o "$userinput" = "Amnesia" -o "$userinput" = "amnesia" ]
 then
 	echo "Your controller will now be configured for Amnesia."
 	echo

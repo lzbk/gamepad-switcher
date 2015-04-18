@@ -8,4 +8,4 @@ if lsmod | grep -q "^$module "
 then sudo rmmod xpad
 fi
 
-sudo xboxdrv$pad -c vvvvvv.xboxdrv -s
+sudo xboxdrv$pad --led 2 -c vvvvvv.xboxdrv -s

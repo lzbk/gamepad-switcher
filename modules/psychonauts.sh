@@ -8,4 +8,4 @@ if lsmod | grep -q "^$module "
 then sudo rmmod xpad
 fi
 
-sudo xboxdrv$pad -c psychonauts.xboxdrv -s
+sudo xboxdrv$pad -c psychonauts.xboxdrv -s --led 2
