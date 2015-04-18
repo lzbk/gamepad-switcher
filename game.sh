@@ -4,8 +4,10 @@
 #                            2 → name of the game as suggested in menu
 
 #configuration
-. ./config.sh
+export workingDirectory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/"
+#(thanks http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in)
 cd $workingDirectory
+. ./config.sh
 if [ -e "$killProcessesScript" ]
 then
 	echo "There seems to be (a) running instance(s) of the game controller, do you want to brutally kill the processes? (Y/n)\nI'm not sure what it does if you don't…"

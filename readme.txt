@@ -2,4 +2,4 @@ This is a gamepad module switching script intended for use with the Microsoft Xb
 
 To permanently add an alias add the following line to ~/.bash_aliases (if the file does not exist, simply create one) and substitute the name and path as necessary: 
 
-alias <name_of_alias>="cd /path/to/this/folder && ./game.sh && cd -"
+alias <name_of_alias>="/path/to/this/folder/game.sh"
