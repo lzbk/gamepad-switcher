@@ -13,20 +13,14 @@ then
 	touch "$workingDirectory$killProcessesScript"
 fi
 
-sudo xboxdrv -i 0 $pad -s --led 2 &
+sudo xboxdrv -i 0 $pad -s -c metalslug1.xboxdrv --led 2 &
 echo "controller1 is being handled by process number $!"
 if [ -f "$workingDirectory$killProcessesScript" ]
 then 
     echo "sudo kill $!" > "$workingDirectory$killProcessesScript"
 fi
-sudo xboxdrv -i 1 $pad -s --led 3 &
+sudo xboxdrv -i 1 $pad -s -c metalslug2.xboxdrv --led 3 &
 echo "controller2 is being handled by process number $!"
-if [ -f "$workingDirectory$killProcessesScript" ]
-then 
-    echo "sudo kill $!" >> "$workingDirectory$killProcessesScript"
-fi
-sudo xboxdrv -i 2 $pad -s --led 4 &
-echo "controller3 is being handled by process number $!"
 if [ -f "$workingDirectory$killProcessesScript" ]
 then 
     echo "sudo kill $!" >> "$workingDirectory$killProcessesScript"

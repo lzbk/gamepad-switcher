@@ -1,0 +1,29 @@
+[xboxdrv]
+ui-clear=true
+trigger-as-button = true
+
+[ui-axismap]
+x1=KEY_K:KEY_SEMICOLON
+y1=KEY_O:KEY_L
+x2^dead:6000 = REL_X:750:-1
+y2^dead:6000 = REL_Y:750:-1
+
+# trigger^invert = rel-repeat:REL_WHEEL:1:50
+
+[ui-buttonmap]
+a = KEY_U
+x = KEY_G
+rb = KEY_G
+b = KEY_T
+y = KEY_H
+
+[ui-buttonmap]
+du = KEY_O
+dr = KEY_SEMICOLON
+dd = KEY_L
+dl = KEY_K
+
+[ui-buttonmap]
+back  = KEY_R
+
+# EOF #

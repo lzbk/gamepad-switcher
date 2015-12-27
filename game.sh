@@ -8,11 +8,14 @@ export workingDirectory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/"
 #(thanks http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in)
 cd $workingDirectory
 . ./config.sh
+echo "Proove you are root…"
+sudo sleep 0.1
 if [ -e "$killProcessesScript" ]
 then
-	echo "There seems to be (a) running instance(s) of the game controller, do you want to brutally kill the processes? (Y/n)\nI'm not sure what it does if you don't…"
+	echo "There seems to be (a) running instance(s) of the game controller, do you want to brutally kill the processes? (Y/n)"
+	echo "I'm not sure what it does if you don't…"
 	read userinput
-	if [ "$userinput" = "Y" ]
+	if [ "$userinput" = "Y" -o "$userinput" = "y" ]
 	then
 		sh $killProcessesScript
 		rm $killProcessesScript
@@ -51,6 +54,9 @@ else
 	echo 1\) vvvvvv
 	echo 2\) Braid
 	echo 3\) Eggnogg
+	echo 4\) Metal Slug
+	echo 5\) Dustforce
+	echo 6\) Hotline Miami 2: Wrong Number
 	echo 93\) Limbo
 	echo 94\) Lone Survivor
 	echo 95\) Minecraft
@@ -80,6 +86,27 @@ then
 	echo
 	cd modules 
 	./eggnogg.sh
+elif [ "$userinput" = 4 -o "$userinput" = "MetalSlug" -o "$userinput" = "metalslug" -o "$userinput" = "metal" -o "$userinput" = "Metal" -o "$userinput" = "m" -o "$userinput" = "M" ]
+then
+	echo "Your controllerS will now be configured for Metal Slug."
+#Different types of controllers could be configured, but it's not my case so I won't do it ;)
+	echo
+	cd modules 
+	./metalslug.sh
+elif [ "$userinput" = 5 -o "$userinput" = "Dustforce" -o "$userinput" = "dustforce" -o "$userinput" = "dust" -o "$userinput" = "Dust" -o "$userinput" = "d" -o "$userinput" = "D" ]
+then
+	echo "Your controllerS will now be configured for Dust Force."
+#Different types of controllers could be configured, but it's not my case so I won't do it ;)
+	echo
+	cd modules 
+	./dustforce.sh
+elif [ "$userinput" = 6 -o "$userinput" = "Hotline" -o "$userinput" = "Miami" -o "$userinput" = "hotline" -o "$userinput" = "miami" -o "$userinput" = "hm2" -o "$userinput" = "HM2" ]
+then
+	echo "Your controller will now be configured for Hotline Miami 2: Wrong Number."
+#Different types of controllers could be configured, but it's not my case so I won't do it ;)
+	echo
+	cd modules 
+	./hotlinemiami2.sh
 elif [ "$userinput" = 93 -o "$userinput" = "Limbo" -o "$userinput" = "limbo" ]
 then
 	echo "Your controller will now be configured for Limbo."
