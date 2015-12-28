@@ -1,0 +1,31 @@
+[xboxdrv]
+ui-clear=true
+trigger-as-button = true
+
+#watch out AZERTY
+
+[ui-axismap]
+x1=KEY_Q:KEY_D
+y1=KEY_Z:KEY_S
+x2^dead:6000 = REL_X:750:-1
+y2^dead:6000 = REL_Y:750:-1
+
+[ui-buttonmap]
+du = KEY_Z
+dd = KEY_S
+dl = KEY_Q
+dr = KEY_D
+rt = BTN_LEFT
+#attack
+y = KEY_UP
+b = KEY_RIGHT
+a = KEY_DOWN
+x = KEY_LEFT
+#bomb items
+rb = KEY_E
+lb = KEY_SPACE
+lt = KEY_A
+#pause
+back  = KEY_ESC
+
+# EOF #
